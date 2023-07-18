@@ -12,7 +12,7 @@ def read_excel(path: str, rows: list):
     return df
 
 
-def pricelist_to_json(data_frame: DataFrame, ) -> list:
+def pricelist_to_json(data_frame: DataFrame) -> list:
     content = []
     count_errors = 0
 
