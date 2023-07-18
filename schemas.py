@@ -35,5 +35,6 @@ class SItem(BaseModel):
     Name: str = Field(alias="Наименование")
     Article: str = Field(alias="Код товара")
     Description: Optional[str] = Field(alias='Описание', default='')
+    Stock: Optional[int] = Field(alias='Наличие', default=0)
     Price: Optional[float] = Field(alias='Дилер3', default=0)
 

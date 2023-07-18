@@ -48,7 +48,7 @@ if __name__ == "__main__":
     df = pd.read_excel(excel_file).fillna(' ')[[
         'Номер товара', 'Каталог',
         'Код товара', 'Наименование',
-        'Гарантия', 'Дилер3'
+        'Гарантия', 'Наличие', 'Дилер3'
     ]]
 
     with open('price.json', 'w', encoding='utf8') as f:
