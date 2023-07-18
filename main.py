@@ -33,4 +33,4 @@ if __name__ == "__main__":
     )
 
     with open('price.json', 'w', encoding='utf8') as f:
-        json.dump(pricelist_to_json(data), f, ensure_ascii=False, indent=1)
+        json.dump(pricelist_to_json(data), f, ensure_ascii=False, indent=1, separators='.')

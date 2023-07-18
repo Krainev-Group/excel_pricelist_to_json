@@ -25,7 +25,7 @@ def pricelist_to_json(data_frame: DataFrame) -> list:
         try:
             data = SItem.model_validate_json(row).model_dump()
             content.append(data)
-        except ValidationError as e:
+        except ValidationError:
             count_errors += 1
             pass
 
