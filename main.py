@@ -21,16 +21,8 @@ from pydantic import ValidationError
 ]
 """
 
-excel_file = 'excel/price.xlsx'
 
-df = pd.read_excel(excel_file).fillna(' ')[[
-    'Номер товара', 'Каталог',
-    'Код товара', 'Наименование',
-    'Гарантия', 'Дилер3'
-]]
-
-
-def pricelist_to_json(data_frame: DataFrame) -> []:
+def pricelist_to_json(data_frame: DataFrame,) -> list:
     content = []
     count_errors = 0
 
@@ -51,5 +43,13 @@ def pricelist_to_json(data_frame: DataFrame) -> []:
 
 
 if __name__ == "__main__":
+    excel_file = 'excel/price.xlsx'
+
+    df = pd.read_excel(excel_file).fillna(' ')[[
+        'Номер товара', 'Каталог',
+        'Код товара', 'Наименование',
+        'Гарантия', 'Дилер3'
+    ]]
+
     with open('price.json', 'w', encoding='utf8') as f:
         json.dump(pricelist_to_json(df), f, ensure_ascii=False, indent=1)
