@@ -7,8 +7,8 @@ from pydantic import ValidationError
 from schemas import SItem
 
 
-def read_excel(path: str, rows: list):
-    df = pd.read_excel(path).fillna(" ")[rows]
+def read_excel(file_path: str, sel_rows: list):
+    df = pd.read_excel(file_path).fillna(" ")[sel_rows]
     return df
 
 

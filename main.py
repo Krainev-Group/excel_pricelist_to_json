@@ -21,11 +21,11 @@ from service import read_excel, pricelist_to_json
 
 
 if __name__ == "__main__":
-    excel_file = 'excel/price.xlsx'
 
+    excel_file = 'excel/price.xlsx'
     data = read_excel(
-        path=excel_file,
-        rows=[
+        file_path=excel_file,
+        sel_rows=[
             'Номер товара', 'Каталог',
             'Код товара', 'Наименование',
             'Гарантия', 'Наличие', 'Дилер3'
