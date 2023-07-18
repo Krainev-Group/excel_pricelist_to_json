@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional, Literal
 
 """
@@ -20,6 +20,8 @@ from typing import Optional, Literal
 
 
 class SItem(BaseModel):
+    model_config = ConfigDict(strict=False)
+
     Images: Optional[dict] = Field(
         alias="Фото",
         default={"Link": " ", "Width": 0, "Height": 0, }
@@ -37,3 +39,7 @@ class SItem(BaseModel):
     Description: Optional[str] = Field(alias='Описание', default='')
     Stock: Optional[int] = Field(alias='Наличие', default=0)
     Price: Optional[float] = Field(alias='Дилер3', default=0)
+
+    Price1: Optional[float] = Field(alias='Дилер1', exclude=True)
+    Price2: Optional[float] = Field(alias='Дилер2', exclude=True)
+    Price3: Optional[float] = Field(alias='Дилер4', exclude=True)
