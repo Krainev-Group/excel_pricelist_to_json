@@ -30,7 +30,7 @@ df = pd.read_excel(excel_file).fillna(' ')[[
 ]]
 
 
-def pricelist_to_json(data_frame: DataFrame):
+def pricelist_to_json(data_frame: DataFrame) -> []:
     content = []
     count_errors = 0
 
@@ -47,9 +47,9 @@ def pricelist_to_json(data_frame: DataFrame):
     print(f'Выгружено {len(content)} товаров')
     print(f'Ошибок {count_errors}')
 
-    with open('price.json', 'w', encoding='utf8') as f:
-        json.dump(content, f, ensure_ascii=False, indent=1)
+    return content
 
 
 if __name__ == "__main__":
-    pricelist_to_json(df)
+    with open('price.json', 'w', encoding='utf8') as f:
+        json.dump(pricelist_to_json(df), f, ensure_ascii=False, indent=1)
